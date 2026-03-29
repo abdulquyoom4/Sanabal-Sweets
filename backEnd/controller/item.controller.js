@@ -10,13 +10,13 @@ export const getItem = async (req, res) =>{
 }
 
 export const addItem = async (req, res) =>{
-    const { itemCode, title, price, category, quantity} = req.body;
+    const { itemCode, title, price, category, image, quantity} = req.body;
     const existingItem = await Item.findOne({ itemCode });
     if(existingItem){
         return res.status(400).json({ message: 'Item with this code already exists' });
     }
     try{
-        const newItem = new Item({itemCode, title, price, category, quantity});
+        const newItem = new Item({itemCode, title, price, category, image, quantity});
         await newItem.save();
         res.json(newItem);
         res.status(200).json({message: 'Item added successfully'});
@@ -32,8 +32,8 @@ export const editItem = async (req, res) =>{
         if (!selectedItem) {
       return res.status(404).json({ message: 'Item not found' });
     }
-    const {itemCode, title, price, category, quantity} = req.body;
-    await selectedItem.updateOne({itemCode, title, price, category, quantity});
+    const {itemCode, title, price, category, image, quantity} = req.body;
+    await selectedItem.updateOne({itemCode, title, price, category, image, quantity});
     res.status(200).json({ message: 'Item updated successfully' });   
     } catch(error) {
         res.status(500).json({ message: 'Server error' });

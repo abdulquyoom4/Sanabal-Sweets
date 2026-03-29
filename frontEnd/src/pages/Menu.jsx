@@ -12,14 +12,44 @@ const Menu = () => {
       }
    getItems();
   }, [])
+
+  const categories = items.reduce((acc, item) => {
+    const category = item.category || 'Uncategorized';
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(item);
+    return acc;
+  }, {});
+
+  const categoryNames = Object.keys(categories).sort();
   
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-10 place-items-center '>
-     {items.map((item) => (
-      <Card key={item._id} title={item.title} image={"public/images/"+item.image} price={item.price}/>
-     ))}
-    </div>
-
+    <>
+  
+      {categoryNames.length === 0 ? (
+        <p className="text-center text-gray-300 mt-10">Loading menu...</p>
+      ) : (
+        categoryNames.map((category) => (
+          <section key={category} className="mb-16">
+            <h3 className="text-3xl font-semibold text-center text-yellow-500 mt-8">
+              ---- {category} ----
+            </h3>
+            <div className="flex gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:gap-6 px-4 snap-x snap-mandatory">
+              {categories[category].map((item) => (
+                <div key={item._id} className="min-w-full  shrink-0 snap-start">
+                  <Card
+                    itemCode={item.itemCode}
+                    title={item.title}
+                    category={item.category}
+                    image={"/images/" + item.image}
+                    price={item.price}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        ))
+      )}
+    </>
   )
 } 
 

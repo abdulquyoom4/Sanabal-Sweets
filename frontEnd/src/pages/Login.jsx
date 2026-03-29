@@ -18,12 +18,10 @@ const Login = () => {
    const handleSubmit = async (e) =>{
       e.preventDefault();
      try{
-       const res = await axios.post('http://localhost:3000/user/login', formData);
+       const res = await axios.post('/user/login', formData);
        setIsError(false);
        setMessage(res.data.message);
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("role", res.data.role);
-      localStorage.setItem("token", res.data.token);
+      window.dispatchEvent(new Event("authChange"));
          if (res.data.role === 'admin') {
         navigate('/admin');
       } else {

@@ -6,14 +6,25 @@ import itemRoute from './route/item.route.js'
 import userRoute from './route/user.route.js'
 import contactRoute from './route/contact.route.js'
 import orderRoute from './route/order.route.js'
+import cartRoute from './route/cart.route.js'
 
 const port = process.env.PORT || 3000;
 
 dotenv.config();
-const app = express()
-app.use(express.json())
-app.use(cors());
+const app = express();
+app.use(express.json());
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  credentials: true,
+}));
 
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && origin === (process.env.CLIENT_URL || 'http://localhost:5173')) {
+    res.header('Access-Control-Allow-Credentials', 'true');
+  }
+  next();
+});
 
 try {
     mongoose.connect(process.env.MONGOURI);
@@ -26,6 +37,7 @@ app.use('/items', itemRoute);
 app.use('/user', userRoute);
 app.use('/contact', contactRoute);
 app.use('/order', orderRoute);
+app.use('/cart', cartRoute);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

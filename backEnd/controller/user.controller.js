@@ -37,7 +37,35 @@ export const SignUp = async (req, res) => {
       process.env.JWT_SECRET,
       { expiresIn: '1d' }
     )
-            res.status(200).json({ message: 'Login successful', role: user.role, token });
+            res.cookie('jwt', token, {
+              httpOnly: true,
+              secure: false,
+              sameSite: 'lax',
+              maxAge: 24 * 60 * 60 * 1000,
+            });
+            res.status(200).json({ message: 'Login successful', role: user.role });
         } catch(error){
            res.status(500).json({ message: 'Server error' });
         }};
+
+export const Me = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json({ name: user.fullname, email: user.email, role: user.role });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error' });
+    }
+};
+
+export const Logout = async (req, res) => {
+    res.cookie('jwt', '', {
+      httpOnly: true,
+      secure: false,
+      sameSite: 'lax',
+      maxAge: 0,
+    });
+    res.status(200).json({ message: 'Logged out successfully' });
+};
