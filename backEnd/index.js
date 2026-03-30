@@ -42,3 +42,23 @@ app.use('/cart', cartRoute);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+
+
+
+const uri = "mongodb://abdulquyoom402_db_user:<db_password>@ac-glzkrsi-shard-00-00.azo2471.mongodb.net:27017,ac-glzkrsi-shard-00-01.azo2471.mongodb.net:27017,ac-glzkrsi-shard-00-02.azo2471.mongodb.net:27017/?ssl=true&replicaSet=atlas-evy6qm-shard-0&authSource=admin&appName=Cluster0";
+
+const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } };
+
+async function run() {
+  try {
+   
+    await mongoose.connect(uri, clientOptions);
+    await mongoose.connection.db.admin().command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    await mongoose.disconnect();
+  }
+}
+run().catch(console.dir);
