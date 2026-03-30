@@ -14,15 +14,20 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
+
+const allowedOrigins = [
+  "https://project-dekrw.vercel.app",
+];
+
 app.use(cors({
-  origin: function(origin, callback) {
-    if (!origin || origin.endsWith('.vercel.app') || origin === 'http://localhost:5173') {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error("CORS not allowed"));
     }
   },
-  credentials: true,
+  credentials: true
 }));
 
 mongoose.connect(process.env.MONGOURI)
