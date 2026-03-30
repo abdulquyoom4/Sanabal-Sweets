@@ -30,7 +30,7 @@ const Footer = () => {
             className="block mt-2 overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out max-w-90"
           >
             <img
-              src="src/assets/map.png"
+              src="src/assets/map.webp"
               alt="Shop Location on Map"
               className="w-full h-32 md:h-40 object-cover"
             />

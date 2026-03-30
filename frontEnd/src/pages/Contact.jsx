@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import rollSweet from "../assets/sweets2.png";
+import rollSweet from "../assets/sweets2.webp";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
