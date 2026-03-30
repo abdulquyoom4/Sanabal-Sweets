@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import 'index.css'
+import './index.css'
 import Navbar from './components/Navbar'
 import Banner from './components/Banner'
 import OrderForm from './components/OrderForm'
