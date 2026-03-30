@@ -1,4 +1,6 @@
 import React from "react";
+import map from '../assets/map.webp'
+import footerIcon from '../assets/footerIcon.webp'
 
 const Footer = () => {
   return (
@@ -7,7 +9,7 @@ const Footer = () => {
         
         <div>
           <img
-            src="src/assets/footerIcon.webp"
+            src={footerIcon}
             alt="Snabel Sweets Logo"
             className="w-34 h-auto mb-2"
           />
@@ -30,7 +32,7 @@ const Footer = () => {
             className="block mt-2 overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out max-w-90"
           >
             <img
-              src="src/assets/map.webp"
+              src={map}
               alt="Shop Location on Map"
               className="w-full h-32 md:h-40 object-cover"
             />
