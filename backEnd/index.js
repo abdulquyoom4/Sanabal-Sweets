@@ -17,6 +17,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "https://project-dekrw.vercel.app",
+  "https://snabelsweets-pmlc3m8r8-abdulquyoom4s-projects.vercel.app/",
 ];
 
 app.use(cors({
