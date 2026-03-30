@@ -29,7 +29,7 @@ const Card = (props) => {
       quantity: 1,
     };
     try {
-      await axios.post("http://localhost:3000/cart", selectedItem);
+      await axios.post("/cart", selectedItem);
       toast.success("Item added to cart!", {
         position: "top-right",
         autoClose: 3000,

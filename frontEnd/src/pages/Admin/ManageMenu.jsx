@@ -18,7 +18,7 @@ const ManageMenu = () => {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/items");
+        const res = await axios.get("/items");
         setMenuItems(res.data);
       } catch {
         console.log("something wrong occured");
@@ -42,7 +42,7 @@ const ManageMenu = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/items/admin/menu",
+        "/items/admin/menu",
         formData,
       );
       setMessage(res.data.message);
@@ -63,7 +63,7 @@ const ManageMenu = () => {
   const handleDelete = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.delete("http://localhost:3000/items/admin/menu", {
+      const res = await axios.delete("/items/admin/menu", {
         data: { itemCode: formData.itemCode },
       });
       setMessage(res.data.message);

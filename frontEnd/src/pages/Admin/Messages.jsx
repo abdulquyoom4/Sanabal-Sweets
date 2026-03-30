@@ -7,7 +7,7 @@ const Messages = () => {
   useEffect(() => {
     const getMessages = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/contact/admin/messages');
+        const res = await axios.get('/contact/admin/messages');
         setMessages(res.data.messages);
       } catch (error) {
         console.log(error);

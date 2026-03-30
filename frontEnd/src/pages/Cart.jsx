@@ -9,7 +9,7 @@ const CartPage = () => {
   useEffect(() => {
     const getCartItems = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/cart");
+        const response = await axios.get("/cart");
         setCartItems(response.data);
       } catch (error) {
         console.error("Error fetching cart items:", error);
@@ -20,7 +20,7 @@ const CartPage = () => {
 
   const deleteCartItem = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/cart/${id}`);
+      await axios.delete(`/cart/${id}`);
       setCartItems(cartItems.filter(item => item._id !== id));
     } catch (error) {
       console.error("Error deleting cart item:", error);

@@ -5,7 +5,7 @@ import './index.css'
 import 'react-toastify/dist/ReactToastify.css'
 import App from './App.jsx'
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 axios.defaults.withCredentials = true;
 
 createRoot(document.getElementById('root')).render(

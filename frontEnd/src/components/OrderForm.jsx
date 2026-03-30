@@ -13,7 +13,7 @@ const OrderForm = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/cart');
+        const response = await axios.get('/cart');
         const items = response.data || [];
         const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
         setCheckoutData({ items, total });
@@ -57,7 +57,7 @@ const OrderForm = () => {
         })),
       };
 
-      const res = await axios.post('http://localhost:3000/order/placeorder', payload);
+      const res = await axios.post('/order/placeorder', payload);
       setIsError(false);
       setMessage(res.data.message || 'Order placed successfully');
       toast.success('Order placed successfully!', {

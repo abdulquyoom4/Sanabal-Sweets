@@ -7,7 +7,7 @@ const Menu = () => {
 
   useEffect(() => {
       const getItems = async () => { 
-        const res = await axios.get('http://localhost:3000/items')
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/items`)
         setItems(res.data);
       }
    getItems();
