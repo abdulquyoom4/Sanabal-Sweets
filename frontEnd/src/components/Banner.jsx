@@ -1,4 +1,4 @@
-import sweets from '../assets/bannerpic.png'
+import sweets from '../assets/bannerpic.webp'
 
 const Banner = () => {
   return (
