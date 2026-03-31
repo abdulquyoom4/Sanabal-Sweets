@@ -33,7 +33,7 @@ const SignUp = () => {
   <>
     <form 
       onSubmit={handleSubmit} 
-      className='bg-black bg-opacity-90 flex flex-col w-full max-w-[400px] m-auto mt-12 mb-20 p-6 items-center gap-6 rounded-xl shadow-2xl'
+      className='bg-black bg-opacity-90 flex flex-col w-[80%] md:max-w-[400px] m-auto mt-12 mb-20 p-6 items-center gap-6 rounded-xl shadow-2xl'
     >
 
       {/* Full Name */}
