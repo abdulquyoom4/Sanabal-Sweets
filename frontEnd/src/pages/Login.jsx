@@ -38,7 +38,7 @@ const Login = () => {
   return (
    <>
    
-  <form onSubmit={handleSubmit} className='bg-black bg-opacity-90 flex flex-col w-full max-w-[400px] m-auto mt-12 mb-20 p-6 items-center gap-6 rounded-xl shadow-2xl'>
+  <form onSubmit={handleSubmit} className='bg-black bg-opacity-90 flex flex-col w-[80%] md:max-w-[400px] m-auto mt-12 mb-20 p-6 items-center gap-6 rounded-xl shadow-2xl'>
   <div className='flex flex-col w-full'>
     <label htmlFor="email" className='text-white text-lg mb-1'>Enter Your Email:</label>
     <input 
