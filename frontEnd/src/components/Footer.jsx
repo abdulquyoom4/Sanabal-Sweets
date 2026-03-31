@@ -10,11 +10,11 @@ const Footer = () => {
         <div>
           <img
             src={footerIcon}
-            alt="Snabel Sweets Logo"
+            alt="Sanabal Sweets Logo"
             className="w-34 h-auto mb-2"
           />
-          <h2 className="text-2xl font-bold mb-4 text-white">Snabel Sweets</h2>
-          <p className="mt-2">© 2026 Snabel Sweets. All rights reserved.</p>
+          <h2 className="text-2xl font-bold mb-4 text-white">Sanabal Sweets</h2>
+          <p className="mt-2">© 2026 Sanabal Sweets. All rights reserved.</p>
           <p className="mt-5"> Made with ❤️ by Abdul Quyoom</p>
         </div>
 
