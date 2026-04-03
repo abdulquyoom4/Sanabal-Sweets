@@ -1,4 +1,4 @@
-import express from 'express'
+ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
@@ -31,9 +31,13 @@ app.use(cors({
   credentials: true
 }));
 
-mongoose.connect(process.env.MONGOURI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.log("Error: ", err));
+;(async ()=>{
+  try {
+    await mongoose.connect(process.env.MONGOURI);
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+  }
+})()
 
 app.use('/items', itemRoute);
 app.use('/user', userRoute);
