@@ -49,7 +49,6 @@ E-Commerce-Store-MERN/
 
 ## 👨‍💻 Author
 **Abdul Quyoom**  
-[GitHub](https://github.com/abdulquyoom4) | [LinkedIn](https://linkedin.com/in/abdulquyoom4)
+LinkedIn: https://linkedin.com/in/abdulquyoom4
 ````
 
-Replace the URLs with your actual links. ✅
