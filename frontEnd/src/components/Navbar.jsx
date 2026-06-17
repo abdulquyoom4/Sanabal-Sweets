@@ -48,24 +48,12 @@ const Navbar = () => {
           <img src={hamBurger} alt="hamBurger" onClick={() => setHamOpen(true)} />
         </div>
 
-        <div className="loginbtn">
-          {!isLoggedIn ? (
-            <NavLink
-              to="/login"
-              className="bg-yellow-600 px-3 py-1 rounded-lg font-bold hover:text-yellow-500 hover:bg-transparent hover:border cursor-pointer text-center"
-            >
-              Login
-            </NavLink>
-          ) : (
-            <button
-              onClick={handleLogout}
-              className="bg-yellow-600 px-3 py-1 rounded-lg font-bold hover:text-yellow-500 hover:bg-transparent cursor-pointer text-center"
-            >
-              Logout
-            </button>
-          )}
+      
+<div className="logo">
+          <h2 className="font-urdu font-bold text-yellow-500 text-2xl">
+            سنابل سویٹس
+          </h2>
         </div>
-
         <div className="links hidden md:block">
           <ul className="flex justify-center space-x-7 text-lg font-semibold">
             <li>
@@ -97,12 +85,24 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-
-        <div className="logo">
-          <h2 className="font-urdu font-bold text-yellow-500 text-2xl">
-            سنابل سویٹس
-          </h2>
+  <div className="loginbtn">
+          {!isLoggedIn ? (
+            <NavLink
+              to="/login"
+              className="bg-yellow-600 px-3 py-1 rounded-lg font-bold hover:text-yellow-500 hover:bg-transparent hover:border cursor-pointer text-center"
+            >
+              Login
+            </NavLink>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="bg-yellow-600 px-3 py-1 rounded-lg font-bold hover:text-yellow-500 hover:bg-transparent cursor-pointer text-center"
+            >
+              Logout
+            </button>
+          )}
         </div>
+        
       </div>
 
       {hamOpen && (
