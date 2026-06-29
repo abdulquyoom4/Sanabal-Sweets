@@ -48,8 +48,5 @@ app.use('/cart', cartRoute);
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
 })
-<<<<<<< HEAD
 
 module.exports = app;
-=======
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
