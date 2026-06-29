@@ -1,5 +1,5 @@
 # Use official Node.js LTS image
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set working directory inside container
 WORKDIR /backEnd
@@ -14,7 +14,7 @@ RUN npm install --production
 COPY . .
 
 # Expose the port your app runs on
-EXPOSE 5173
+EXPOSE 3000
 
 # Start the app
 CMD ["node", "server.js"]
