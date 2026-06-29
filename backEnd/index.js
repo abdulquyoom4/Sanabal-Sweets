@@ -1,8 +1,4 @@
-<<<<<<< HEAD
- import express from 'express'
-=======
 import express from 'express'
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
