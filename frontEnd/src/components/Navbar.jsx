@@ -43,27 +43,18 @@ const Navbar = () => {
 
   return (
     <>
+
       <div className="navbar flex justify-around mt-3 items-center">
         <div className="hamBurger md:hidden cursor-pointer">
           <img src={hamBurger} alt="hamBurger" onClick={() => setHamOpen(true)} />
         </div>
 
-<<<<<<< HEAD
-      
 <div className="logo">
-=======
-  <div className="logo">
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
           <h2 className="font-urdu font-bold text-yellow-500 text-2xl">
             سنابل سویٹس
           </h2>
         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
-        <div className="links hidden md:block">
-          <ul className="flex justify-center space-x-7 text-lg font-semibold">
+            <ul className="hidden md:flex gap-6 text-lg font-semibold">
             <li>
               <NavLink to="/" className={(e) => (e.isActive ? "text-yellow-500" : "")}>
                 Home
@@ -92,13 +83,8 @@ const Navbar = () => {
               </li>
             )}
           </ul>
-        </div>
-<<<<<<< HEAD
+        
   <div className="loginbtn">
-=======
-
-                <div className="loginbtn">
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
           {!isLoggedIn ? (
             <NavLink
               to="/login"
@@ -115,11 +101,8 @@ const Navbar = () => {
             </button>
           )}
         </div>
-<<<<<<< HEAD
         
-=======
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
-      </div>
+     </div>
 
       {hamOpen && (
         <div
@@ -172,8 +155,4 @@ const Navbar = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar;
->>>>>>> ad0d333fe5588494675f5bfd83d832d84ad31c66
